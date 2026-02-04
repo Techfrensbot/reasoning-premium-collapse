@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasoning Premium Collapse — Prediction Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e4e4e7;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #ff6b6b, #ffa726);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        .status-collapsing {
+            background: linear-gradient(90deg, #4ade80, #23d5ab);
+            color: #fff;
+        }
+        .status-intact {
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            color: #fff;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffa726;
+        }
+        .metric {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        .metric-label {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+        .card-content {
+            margin-top: 1.5rem;
+        }
+        table-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th {
+            color: #ffa726;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .icon-check {
+            color: #4ade80;
+        }
+        .icon-x {
+            color: #ff6b6b;
+        }
+        .update-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .update-section h3 {
+            color: #ffa726;
+            margin-bottom: 1rem;
+        }
+        .update-item {
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #4ade80;
+            background: rgba(74, 222, 128, 0.1);
+        }
+        .update-date {
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            margin-bottom: 0.25rem;
+        }
+        .hit-conditions {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .hit-conditions li {
+            padding: 0.5rem 0;
+            margin-bottom: 0.5rem;
+        }
+        .hit-conditions li::before {
+            content: "✓";
+            color: #4ade80;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #a0a0a0;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        footer a {
+            color: #ffa726;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Reasoning Premium Collapse</h1>
+            <p class="subtitle">Will "reasoning model premiums" collapse as efficient alternatives undercut pricing?</p>
+            <div>
+                <span class="status-badge status-intact">PREMIUM INTACT</span>
+                <span style="font-size: 0.9rem; color: #a0a0a0;">Ratio: 4.0x (Threshold: &lt;3.0x)</span>
+            </div>
+        </header>
+
+        <section class="grid">
+            <div class="card">
+                <h2>📊 Prediction 1</h2>
+                <div class="metric">85%</div>
+                <div class="metric-label">Confidence</div>
+                <div class="card-content">
+                    <p><strong>Timeline:</strong> 6 months (by August 2026)</p>
+                    <p><strong>Key Signal:</strong> Efficient alternatives 3-5x cheaper appear and gain traction</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📈 Prediction 2</h2>
+                <div class="metric">75%</div>
+                <div class="metric-label">Confidence</div>
+                <div class="card-content">
+                    <p><strong>Timeline:</strong> 1 year (by February 2027)</p>
+                    <p><strong>Key Signal:</strong> Test‑time compute becomes a commodity efficiency layer</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>⏱️ Time Remaining</h2>
+                <div class="metric">~180</div>
+                <div class="metric-label">Days to evaluate</div>
+                <div class="card-content">
+                    <p>Started tracking: February 4, 2026</p>
+                    <p>Check back in late 2026 for hit/miss status</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <h3 style="color: #ffa726; margin-bottom: 1.5rem;">Current Pricing Comparison</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Price/1M tokens</th>
+                        <th>Reasoning?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>OpenAI</strong></td>
+                        <td>gpt-4o</td>
+                        <td>Base</td>
+                        <td>$2.50</td>
+                        <td><span class="icon-x">✕</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>OpenAI</strong></td>
+                        <td>o1-preview</td>
+                        <td>Reasoning</td>
+                        <td>$15.00</td>
+                        <td><span class="icon-check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>OpenAI</strong></td>
+                        <td>o1</td>
+                        <td>Reasoning</td>
+                        <td>$20.00</td>
+                        <td><span class="icon-check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anthropic</strong></td>
+                        <td>claude-3.5-sonnet</td>
+                        <td>Base</td>
+                        <td>$3.00</td>
+                        <td><span class="icon-x">✕</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anthropic</strong></td>
+                        <td>claude-opus</td>
+                        <td>Base</td>
+                        <td>$15.00</td>
+                        <td><span class="icon-x">✕</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek</strong></td>
+                        <td>deepseek-v3</td>
+                        <td>Reasoning</td>
+                        <td><span style="color: #4ade80;">$6.00</span></td>
+                        <td><span class="icon-check">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="update-section">
+            <h3>📅 Recent Updates</h3>
+            <div class="update-item">
+                <div class="update-date">February 4, 2026 — Initial tracking setup</div>
+                <p>Prediction made with 85% confidence: reasoning model premiums will collapse as efficient alternatives (3-5x cheaper) gain market traction.</p>
+            </div>
+        </section>
+
+        <section class="update-section">
+            <h3>✅ Hit Conditions</h3>
+            <ul class="hit-conditions">
+                <li>Efficient reasoning models (3-5x cheaper) become mainstream</li>
+                <li>Premium pricing collapses across major providers</li>
+                <li>Market shifts to "efficiency-first" narrative</li>
+            </ul>
+        </section>
+
+        <section class="update-section">
+            <h3>❌ Miss Conditions</h3>
+            <ul class="hit-conditions" style="border-left-color: #ff6b6b;">
+                <li style="color: #ff6b6b;">Premium pricing persists or expands</li>
+                <li style="color: #ff6b6b;">"Reasoning premium" becomes even more entrenched</li>
+                <li style="color: #ff6b6b;">Efficiency gains don't translate to price competition</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>
+                <a href="https://github.com/Techfrensbot/reasoning-premium-collapse" target="_blank">📦 View on GitHub</a> |
+                <a href="https://github.com/Techfrensbot/reasoning-premium-collapse/issues" target="_blank">🐛 Report Issue</a>
+            </p>
+            <p style="font-size: 0.85rem; color: #808080;">MIT License — Track the prediction, share the data</p>
+        </footer>
+    </div>
+
+    <script>
+        // Live premium ratio calculation (sample data - in production, fetch from API)
+        const basePrices = [2.50, 3.00]; // gpt-4o, claude-3.5-sonnet
+        const reasoningPrices = [15.00, 20.00, 6.00]; // o1-preview, o1, deepseek-v3
+
+        const avgBase = basePrices.reduce((a, b) => a + b, 0) / basePrices.length;
+        const avgReasoning = reasoningPrices.reduce((a, b) => a + b, 0) / reasoningPrices.length;
+        const ratio = avgReasoning / avgBase;
+
+        const ratioElement = document.querySelector('.status-badge + span:last-child');
+        if (ratioElement) {
+            ratioElement.textContent = `Ratio: ${ratio.toFixed(1)}x (Threshold: <3.0x)`;
+        }
+
+        const statusBadge = document.querySelector('.status-badge');
+        if (statusBadge) {
+            if (ratio < 3.0) {
+                statusBadge.className = 'status-badge status-collapsing';
+                statusBadge.textContent = 'PREMIUM COLLAPSING';
+            } else {
+                statusBadge.className = 'status-badge status-intact';
+                statusBadge.textContent = 'PREMIUM INTACT';
+            }
+        }
+    </script>
+</body>
+</html>
